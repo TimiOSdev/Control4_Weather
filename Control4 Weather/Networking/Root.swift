@@ -18,6 +18,7 @@ struct Root: Codable {
     
     struct Main: Codable {
         let temp: Float
+        let feelsLike: Float
         let tempMin: Float
         let tempMax: Float
     }

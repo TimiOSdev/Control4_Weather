@@ -14,6 +14,8 @@ class WeatherDetailVC: UIViewController {
     @IBOutlet weak var chanceOfPrecipitationLabel: UILabel!
     @IBOutlet weak var cityPicker: UIPickerView!
     @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    
     
     // MARK: - Properties
     let cities = ["San Francisco", "New York", "Salt Lake City"]
@@ -27,7 +29,9 @@ class WeatherDetailVC: UIViewController {
     func makeFeedRequest() {
         guard let cityChosen = self.cityChosenLabel.text else { return }
         let cityChosenShortened = cityChosen.replacingOccurrences(of: " ", with: "%20")
+       
         let baseURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityChosenShortened)&appid=da65fafb6cb9242168b7724fb5ab75e7"
+         print("\(baseURL)")
         let endPoint = URL(string: baseURL)
         guard let url = endPoint else { return }
         
@@ -73,6 +77,7 @@ class WeatherDetailVC: UIViewController {
                     self.hiTemperatureLabel.text = self.convertIntoFahrenheit(temp: weatherInfo.main.tempMax)
                     self.lowTemperatureLabel.text = self.convertIntoFahrenheit(temp: weatherInfo.main.tempMin)
                     self.chanceOfPrecipitationLabel.text = weatherInfo.weather[0].description
+                    self.feelsLikeLabel.text = self.convertIntoFahrenheit(temp: weatherInfo.main.feelsLike) 
                 }
             }
             catch{
