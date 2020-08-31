@@ -4,7 +4,12 @@
 
 import UIKit
 
-class WeatherDetailVC: UIViewController {
+class WeatherDetailVC: UIViewController, newCityAddedDelegate {
+    func addNewCity(city: String) {
+        self.cities.append(city)
+        self.cityPicker.reloadAllComponents()
+    }
+    
     
     // MARK: - Outlets
     @IBOutlet weak var cityChosenLabel: UILabel!
@@ -18,20 +23,26 @@ class WeatherDetailVC: UIViewController {
     
     
     // MARK: - Properties
-    let cities = ["San Francisco", "New York", "Salt Lake City"]
+    var cities = ["San Francisco", "New York", "Salt Lake City"]
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cityChosenLabel.text = cities[0]
         makeFeedRequest()
+    }
+    
+    // MARK: - Actions
+    @IBAction func ToAddCityController(_ sender: Any) {
+        performSegue(withIdentifier: "toForm", sender: nil)
     }
     
     // MARK: - Functions
     func makeFeedRequest() {
         guard let cityChosen = self.cityChosenLabel.text else { return }
         let cityChosenShortened = cityChosen.replacingOccurrences(of: " ", with: "%20")
-       
+        
         let baseURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityChosenShortened)&appid=da65fafb6cb9242168b7724fb5ab75e7"
-         print("\(baseURL)")
+        
         let endPoint = URL(string: baseURL)
         guard let url = endPoint else { return }
         
@@ -93,6 +104,12 @@ class WeatherDetailVC: UIViewController {
     
     func convertIntoFahrenheit(temp: Float) -> String {
         return String(format: "%.0f", (temp - 273.15) * 1.8 + 32) + "\u{00B0}"
+    }
+    // MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AddNewCityVC {
+            destination.delegate = self
+        }
     }
 }
 

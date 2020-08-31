@@ -10,6 +10,7 @@
         <!--Weather DetailVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="WeatherDetailVC" customModule="Control4_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -35,7 +36,7 @@
                                 </connections>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lJk-eA-zP8" userLabel="Stack Container">
-                                <rect key="frame" x="10" y="129" width="394" height="208.66666666666663"/>
+                                <rect key="frame" x="10" y="93.999999999999986" width="394" height="208.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ij2-ul-cBF">
                                         <rect key="frame" x="97.000000000000014" y="0.0" width="200.33333333333337" height="31.333333333333332"/>
@@ -67,7 +68,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zz-zL-iex">
-                                                        <rect key="frame" x="47.999999999999993" y="26.333333333333314" width="71.333333333333314" height="90"/>
+                                                        <rect key="frame" x="47.999999999999993" y="26.333333333333329" width="71.333333333333314" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="90" id="a2Q-AE-7xJ"/>
                                                         </constraints>
@@ -85,7 +86,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ean-s7-V34">
-                                        <rect key="frame" x="132" y="147.66666666666669" width="130.33333333333337" height="20.333333333333343"/>
+                                        <rect key="frame" x="132" y="147.66666666666666" width="130.33333333333337" height="20.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfV-WM-iwg">
                                                 <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="20.333333333333332"/>
@@ -146,10 +147,27 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="394" id="EcK-jb-Nwj"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYG-iA-82B">
+                                <rect key="frame" x="10" y="749" width="394" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Xg5-Yk-4OU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Add City">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ToAddCityController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cCZ-ON-25x"/>
+                                    <segue destination="bm6-v6-WND" kind="presentation" identifier="toForm" modalPresentationStyle="fullScreen" id="uhg-Vd-ttB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NSu-u5-1yr" firstAttribute="trailing" secondItem="A2M-SZ-hQq" secondAttribute="trailing" id="1b4-MT-O0h"/>
@@ -158,14 +176,17 @@
                             <constraint firstItem="NSu-u5-1yr" firstAttribute="leading" secondItem="A2M-SZ-hQq" secondAttribute="leading" id="8G9-4O-w8l"/>
                             <constraint firstItem="A2M-SZ-hQq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KPu-im-Ec8"/>
                             <constraint firstItem="A2M-SZ-hQq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-32" id="LrW-xB-Wax"/>
+                            <constraint firstItem="wYG-iA-82B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PKc-Z8-Erm"/>
                             <constraint firstItem="A2M-SZ-hQq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-32" id="RDg-hB-wdq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lJk-eA-zP8" secondAttribute="trailing" constant="10" id="Vn6-Gt-Oc6"/>
                             <constraint firstItem="A2M-SZ-hQq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WhI-Vg-czY"/>
                             <constraint firstAttribute="bottom" secondItem="A2M-SZ-hQq" secondAttribute="bottom" id="iln-a0-pZ7"/>
                             <constraint firstItem="NSu-u5-1yr" firstAttribute="bottom" secondItem="A2M-SZ-hQq" secondAttribute="bottom" id="jCV-ta-YqJ"/>
-                            <constraint firstItem="lJk-eA-zP8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="s9j-4Z-yNm"/>
+                            <constraint firstItem="NSu-u5-1yr" firstAttribute="top" secondItem="wYG-iA-82B" secondAttribute="bottom" constant="1" id="lUF-Om-K02"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wYG-iA-82B" secondAttribute="trailing" constant="10" id="lYI-8Y-MLL"/>
+                            <constraint firstItem="wYG-iA-82B" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lJk-eA-zP8" secondAttribute="bottom" constant="1" id="q7y-Dz-5o7"/>
+                            <constraint firstItem="lJk-eA-zP8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="s9j-4Z-yNm"/>
                             <constraint firstItem="lJk-eA-zP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sk8-IH-G3i"/>
-                            <constraint firstItem="NSu-u5-1yr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lJk-eA-zP8" secondAttribute="bottom" constant="25" id="tWa-XD-UWz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -180,12 +201,83 @@
                         <outlet property="weatherIcon" destination="D43-Mg-FVQ" id="2J9-00-VuC"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-517.39130434782612" y="192.1875"/>
+        </scene>
+        <!--Add New CityVC-->
+        <scene sceneID="rnI-xE-Ifi">
+            <objects>
+                <viewController id="bm6-v6-WND" customClass="AddNewCityVC" customModule="Control4_Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QEG-Dd-6Ep">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="fwI-ub-lxF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qc-bx-n0x">
+                                <rect key="frame" x="99" y="231" width="216" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5T-Gz-lFa">
+                                <rect key="frame" x="99" y="273" width="216" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dxV-a7-Bej"/>
+                                </constraints>
+                                <state key="normal" title="add City">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newCityButton:" destination="bm6-v6-WND" eventType="touchUpInside" id="2YK-OI-iX9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODX-EG-KMl">
+                                <rect key="frame" x="87" y="195" width="240" height="27.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ODX-EG-KMl" firstAttribute="top" secondItem="1Zw-Pg-E09" secondAttribute="top" constant="151" id="6Fe-Pf-fwP"/>
+                            <constraint firstItem="1Zw-Pg-E09" firstAttribute="trailing" secondItem="fwI-ub-lxF" secondAttribute="trailing" id="E80-uy-aud"/>
+                            <constraint firstItem="fwI-ub-lxF" firstAttribute="trailing" secondItem="1Zw-Pg-E09" secondAttribute="trailing" id="Qiy-O3-h8e"/>
+                            <constraint firstItem="1Zw-Pg-E09" firstAttribute="trailing" secondItem="O5T-Gz-lFa" secondAttribute="trailing" constant="99" id="SZB-Pt-hZ5"/>
+                            <constraint firstItem="9qc-bx-n0x" firstAttribute="leading" secondItem="1Zw-Pg-E09" secondAttribute="leading" constant="99" id="T3T-lQ-Q9Q"/>
+                            <constraint firstItem="ODX-EG-KMl" firstAttribute="centerX" secondItem="QEG-Dd-6Ep" secondAttribute="centerX" id="YSO-2o-Hwv"/>
+                            <constraint firstItem="fwI-ub-lxF" firstAttribute="leading" secondItem="1Zw-Pg-E09" secondAttribute="leading" id="ZD4-LJ-0za"/>
+                            <constraint firstItem="9qc-bx-n0x" firstAttribute="centerX" secondItem="O5T-Gz-lFa" secondAttribute="centerX" id="a0Y-6A-lTH"/>
+                            <constraint firstItem="fwI-ub-lxF" firstAttribute="top" secondItem="QEG-Dd-6Ep" secondAttribute="top" id="bWJ-mi-Dtg"/>
+                            <constraint firstItem="1Zw-Pg-E09" firstAttribute="bottom" secondItem="fwI-ub-lxF" secondAttribute="bottom" constant="-34" id="dCl-MT-ejK"/>
+                            <constraint firstItem="O5T-Gz-lFa" firstAttribute="top" secondItem="9qc-bx-n0x" secondAttribute="bottom" constant="8" id="i0G-Di-SRE"/>
+                            <constraint firstItem="ODX-EG-KMl" firstAttribute="centerX" secondItem="9qc-bx-n0x" secondAttribute="centerX" id="oIN-tF-695"/>
+                            <constraint firstItem="9qc-bx-n0x" firstAttribute="top" secondItem="ODX-EG-KMl" secondAttribute="bottom" constant="8.3333333333333428" id="sOI-rT-Aw5"/>
+                            <constraint firstItem="fwI-ub-lxF" firstAttribute="leading" secondItem="1Zw-Pg-E09" secondAttribute="leading" id="uGg-nQ-4t2"/>
+                            <constraint firstAttribute="bottom" secondItem="fwI-ub-lxF" secondAttribute="bottom" id="wfg-t2-ZL4"/>
+                            <constraint firstItem="ODX-EG-KMl" firstAttribute="leading" secondItem="1Zw-Pg-E09" secondAttribute="leading" constant="87" id="zh0-AH-X6v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Zw-Pg-E09"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HLx-uH-i8i"/>
+                    <connections>
+                        <outlet property="cityTextField" destination="9qc-bx-n0x" id="3tW-8a-D7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAp-98-aIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214.49275362318843" y="189.50892857142856"/>
         </scene>
     </scenes>
     <resources>
         <image name="images" width="413" height="717"/>
+        <image name="wallpaper" width="750" height="1334"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224EE60A24FA353900A55F23 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224EE60924FA353900A55F23 /* Root.swift */; };
+		22689A9124FCB7F300C93D09 /* AddNewCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22689A9024FCB7F300C93D09 /* AddNewCityVC.swift */; };
 		227CCBC324FC3A1D003CE9EB /* Control4_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CCBC224FC3A1D003CE9EB /* Control4_WeatherTests.swift */; };
 		227CCBD924FC3C9C003CE9EB /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CCBD824FC3C9C003CE9EB /* UITest.swift */; };
 		22A67EFC24F9FAD70096755F /* WeatherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A67EFB24F9FAD70096755F /* WeatherDetailVC.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		224EE60924FA353900A55F23 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		22689A9024FCB7F300C93D09 /* AddNewCityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCityVC.swift; sourceTree = "<group>"; };
 		227CCBC024FC3A1D003CE9EB /* Control4 WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Control4 WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227CCBC224FC3A1D003CE9EB /* Control4_WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control4_WeatherTests.swift; sourceTree = "<group>"; };
 		227CCBC424FC3A1D003CE9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				22A67EFB24F9FAD70096755F /* WeatherDetailVC.swift */,
+				22689A9024FCB7F300C93D09 /* AddNewCityVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				22E17F7624F9E6C300F8FACF /* SceneDelegate.swift in Sources */,
 				22A67EFC24F9FAD70096755F /* WeatherDetailVC.swift in Sources */,
 				224EE60A24FA353900A55F23 /* Root.swift in Sources */,
+				22689A9124FCB7F300C93D09 /* AddNewCityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
